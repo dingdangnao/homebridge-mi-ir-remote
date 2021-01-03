@@ -52,7 +52,7 @@ class MiRemoteMomentarySwitchService {
                   self.SwitchStatus.getCharacteristic(Characteristic.On).updateValue(false);
                   self.onoffstate = false;
                   self.platform.log.debug(`[${self.name}]MomentarySwitch: Auto Turned Off"`);
-                }, 0.3 * 1000);
+                }, 1000);
                 callback(null);
               })
               .catch(function(err) {
@@ -64,7 +64,7 @@ class MiRemoteMomentarySwitchService {
               self.SwitchStatus.getCharacteristic(Characteristic.On).updateValue(false);
               self.onoffstate = false;
               self.platform.log.info(`[${self.name}]MomentarySwitch: Unready Turned Off`);
-            }, 0.3 * 1000);
+            }, 1000);
             callback(null);
           }
         } catch (err) {
